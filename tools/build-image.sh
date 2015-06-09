@@ -23,5 +23,5 @@ export NODEPOOL_SCRIPTDIR=${NODEPOOL_SCRIPTDIR:-nodepool/scripts}
 export CONFIG_SOURCE=${CONFIG_SOURCE:-https://git.openstack.org/openstack-infra/system-config}
 export CONFIG_REF=${CONFIG_REF:-master}
 
-disk-image-create -x --no-tmpfs -o $IMAGE_NAME $DISTRO \
+disk-image-create -t raw -u -x --no-tmpfs -o $IMAGE_NAME $DISTRO \
     vm openstack-repos puppet nodepool-base node-devstack
