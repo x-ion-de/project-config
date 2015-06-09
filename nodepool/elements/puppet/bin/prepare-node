@@ -17,6 +17,11 @@
 
 set -e
 
+echo Hello JR
+(cd /etc/puppet/modules/iptables; git fetch https://review.openstack.org/openstack-infra/puppet-iptables refs/changes/41/189141/1 && git checkout FETCH_HEAD)
+(cd /opt/build_git/openstack-infra/system-config; git fetch https://review.openstack.org/openstack-infra/system-config refs/changes/42/189142/2 && git checkout FETCH_HEAD)
+echo Bye JR
+
 SUDO=${SUDO:-true}
 THIN=${THIN:-true}
 ALL_MYSQL_PRIVS=${ALL_MYSQL_PRIVS:-false}
